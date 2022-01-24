@@ -1,23 +1,7 @@
 <?php
 $thisyear = date("Y");
 $roles = [
-  "Organization Setup" => [
-    "icon"  => "home",
-    "links" => [
-      [
-        "title" => "Dashboard",
-        "url"   => "custom-view/dashboard-mini"
-      ],
-      [
-        "title" => "Settings",
-        "url"   => "form-view/organization"
-      ],
-      [
-        "title" => "Role",
-        "url"   => "content-view/role"
-      ],
-    ]
-  ],
+
   "Business" => [
     "icon"  => "briefcase",
     "links" => [
@@ -40,5 +24,19 @@ $roles = [
       ]
     ]
   ],
+  "Organization Setup" => [
+    "icon"  => "home",
+    "links" => [
+
+      [
+        "title" => "Settings",
+        "url"   => "form-view/organization"
+      ],
+      [
+        "title" => "Role",
+        "url"   => "content-view/role"
+      ],
+    ]
+  ]
 
 ];

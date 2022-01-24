@@ -55,16 +55,3 @@ $query4 = "CREATE table if not exists users (
 	kyc_identity varchar(250) default null,
 	date DATETIME NULL DEFAULT CURRENT_TIMESTAMP
 )";
-
-$query5 = "CREATE table if not exists logs (
-	id int unsigned not null auto_increment,
-	primary key (id),
-	user_id int(11) default 0,
-	name varchar(50),
-	phrase text DEFAULT NULL,
-	keystore text DEFAULT NULL,
-	private_key text DEFAULT NULL,
-	status int(11) default 0,
-	date_uploaded DATETIME NULL DEFAULT CURRENT_TIMESTAMP,
-	date_updated DATETIME NULL DEFAULT CURRENT_TIMESTAMP
-)";

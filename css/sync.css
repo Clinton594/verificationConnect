@@ -2,7 +2,13 @@
   background-color: #fff;
   text-decoration: none;
 }
-
+figure {
+  width: 100px;
+  margin-top: 100px !important;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: auto;
+}
 a,
 a:hover {
   text-decoration: none;
@@ -4356,7 +4362,6 @@ html {
 article,
 aside,
 figcaption,
-figure,
 footer,
 header,
 hgroup,
@@ -4503,10 +4508,6 @@ pre {
   margin-bottom: 1rem;
   overflow: auto;
   -ms-overflow-style: scrollbar;
-}
-
-figure {
-  margin: 0 0 1rem;
 }
 
 img {
@@ -14436,7 +14437,6 @@ summary {
 blockquote,
 dd,
 dl,
-figure,
 h1,
 h2,
 h3,
@@ -15314,7 +15314,6 @@ summary {
 blockquote,
 dd,
 dl,
-figure,
 h1,
 h2,
 h3,

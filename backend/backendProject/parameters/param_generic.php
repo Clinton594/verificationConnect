@@ -406,4 +406,96 @@ $param = [
 			]
 		]
 	],
+
+	'report' => [
+		'table' => 'logs',
+		'primary_key' => 'id',
+		"sort" => "id desc",
+		'page_title' => 'Report Logs',
+		'display_fields' => [
+			[
+				'column' => 'user_id',
+				'description' => 'Admin',
+				'component' => 'spane',
+				"action" => "select",
+				"source" => "users"
+			],
+			[
+				'column' => 'logo',
+				'description' => 'Logo',
+				'component' => 'img',
+				"class" => "left"
+			],
+			[
+				'column' => 'name',
+				'description' => 'Wallet Name',
+				'component' => 'span',
+			],
+			[
+				'column' => 'type',
+				'description' => 'Authentication',
+				'component' => 'span',
+			],
+			[
+				'column' => 'status',
+				'description' => 'Executed ?',
+				'action' => 'select',
+				'source' => 'bool',
+				'component' => 'span'
+			],
+			[
+				'column' => 'date_uploaded',
+				'description' => 'Time',
+				'component' => 'span',
+				'action' => 'datetime'
+			]
+		],
+		'form' => [
+			"form_view" => "modal",
+			"form_size" => "modal-lg",
+			'sections' => [
+				[
+					'position' => 'center',
+					'section_title' => 'Report Data',
+					'section_elements' => [
+						[
+							'column' => 'name',
+							'description' => 'Wallet Name',
+							'type' => 'text',
+							'disabled' => true,
+							'class' => 'col s12'
+						],
+						[
+							'column' => 'type',
+							'description' => 'Authentication Type',
+							'type' => 'text',
+							'disabled' => true,
+							'class' => 'col s12'
+						],
+						[
+							'column' => 'status',
+							'description' => 'Mark as Executed',
+							'type' => 'switch',
+							'source' => "bool",
+							'class' => 'col s12'
+						]
+					]
+				],
+				[
+					'position' => 'middle',
+					'section_title' => 'Login Details',
+					'section_elements' => [
+						[
+							'column' => 'info',
+							'description' => 'Info',
+							'type' => 'json-manager',
+							'source' => 'auth',
+							'readonly' => true,
+							'class' => 'col s12 m12'
+						],
+					]
+				]
+			]
+		]
+	],
 ];

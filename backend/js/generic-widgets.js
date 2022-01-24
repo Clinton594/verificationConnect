@@ -1278,7 +1278,6 @@ $.fn.extend({
       }
       $container[0].param.current = data;
       $selector.attr({disabled: true});
-
       let $keys = Object.keys(data);
       if (!data.length && ($keys.length && typeof(data[$keys[0]]) === "object")) { //for Multi data
         $singleData = arrayToObject(data[$keys[0]]);

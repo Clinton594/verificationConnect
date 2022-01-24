@@ -9,7 +9,6 @@
 
 <body>
   <div id="particles-js"></div>
-
   <div id="__next" class="position-relative">
     <div class="font-roboto" id="content">
       <?php require_once("includes/header.php") ?>

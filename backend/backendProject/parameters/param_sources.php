@@ -43,7 +43,9 @@ $sources = [
 		'pdf' => ['pdf'],
 		'archive' => ['zip', '7z', 'rar', 'exe']
 	],
-
+	"auth" => [
+		"type", "password", "value"
+	],
 	"gender" => [
 		"m" => "Male", "f" => "Female"
 	],

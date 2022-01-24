@@ -36,7 +36,7 @@ $roles = [
       ],
       [
         "title" => "Report Logs",
-        "url"  => "content-view/logs"
+        "url"  => "content-view/report"
       ],
     ]
   ],

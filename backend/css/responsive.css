@@ -1,0 +1,118 @@
+@charset "utf-8";
+/* CSS Document */
+/* Mobile */
+@media screen and (max-width:480px){
+  .form-actions > ul {
+    min-width: 270px;
+  }
+}
+/* Small Screens */
+@media screen and (max-width:767px){
+  body.light .packed nav.navbar{
+    width: 100vw;
+    background: white;
+  }
+  nav .brand-logo {
+   margin-left: 0;
+   width: auto;
+   left: 0;
+   transform: unset;
+  }
+  nav .brand {float: left;  width: 30%;}
+  nav .screen-title{    width: 70%;  }
+  .dashboard{padding: 20px 0 ;}
+  .active-div > div {
+    width: 100%;
+    float: left;
+    padding: 0;
+    margin: 0;
+  }
+  .card .card-content{padding: 10px 0;}
+  .collection.with-header .collection-header,
+  .collection.with-header .collection-item
+  {padding: 5px}
+  .reloadPage {
+    right: 10px;
+  }
+	.leftdesc,
+	.halfdesc,
+	.right-halfdesc,
+  .left-minidesc,
+  .centerdesc,
+  .middledesc,
+  .rightdesc {
+		width: 100%;
+    float: left;
+	}
+	.crv{
+		display:none !important;
+		opacity:0;
+	}
+  .list_cont .collection .collection-item.oRow { padding: 5px 5px 0px; }
+  .oRow-numbering{padding: 6px !important}
+  .card .card-content .card-title {
+    padding: 0 10px;
+    font-size: large;
+  }
+  td{
+    font-size:x-small;
+  }
+  .modal .modal-content .modal-body{
+    padding: 0px;
+  }
+}
+/* Big Screens */
+@media screen and (min-width:768px){
+  nav .brand {    float: left;  width: 70%;   }
+  nav .screen-title{    width: 30%;  }
+  .dashboard{padding: 20px 50px;}
+
+	.rightdesc {
+		float: left;
+		width: 40%;
+	}
+	.leftdesc {
+		float: left;
+		width:60%;
+	}
+
+	.halfdesc,
+  .right-halfdesc{
+		float: left;
+		width:50%;
+	}
+
+  .left-minidesc {
+		width:40%;
+    float: left;
+	}
+  .left-minidesc + .middledesc{
+    width: 30%;
+    float: left;
+  }
+  .middledesc + .rightdesc {
+		width:30%;
+	}
+}
+
+.fixed-action-btn[data-mobile] ul {
+    visibility: visible !important;
+}
+.fixed-action-btn[data-mobile]{
+  right: 0;
+  bottom: 150px;
+}
+.fixed-action-btn[data-mobile] ul a.btn-floating{
+    opacity: 1 !important;
+}
+.leftdesc,
+.halfdesc,
+.right-halfdesc,
+.left-minidesc,
+.centerdesc,
+.middledesc,
+.rightdesc {
+  padding: 0 10px;
+  margin: 0 !important;
+}
+.page {margin: 0; padding: 0;}

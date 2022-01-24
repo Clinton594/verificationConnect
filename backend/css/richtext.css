@@ -1,0 +1,212 @@
+@charset "utf-8";
+
+
+.richtext-body {
+    float: left;
+    position: relative;
+    width: 100%;
+    font-family: Roboto,Helvetica;
+    font-size: 1rem;
+    height: auto;
+    transition: all .5s linear;
+    overflow: auto;
+    min-height: 70vh;
+}
+.richtext-body a{
+  color: blue !important;
+  cursor: pointer;
+}
+.richtext-title {
+    color:#8f8f8f;
+    min-height: 70px;
+    font-size: 26px !important;
+    line-height: 60px;
+    text-transform: capitalize;
+    width: 100%;
+    border: unset;
+    padding: 0 30px;
+    border-bottom: solid;
+    margin-bottom: 20px;
+
+}
+.richtext-container {
+    float: left;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.richtext{
+    position: relative;
+}
+
+.richtext > a.toggle_views:hover{
+    color: orange !important;
+}
+
+.richtext-body.view2 p{
+
+}
+.richtext-body.view2 p::before {
+    content: '↩';
+    position: relative;
+    color: orange;
+    margin-right: 15px;
+
+}
+.richtext-body.view2 ol{
+
+}
+.richtext-body.view2 ul{
+
+}
+
+.richtext-body.view2 ul > li{
+    list-style-type: disc;
+}
+.richtext-body.view2 ol > li{
+    list-style-type: number;
+}
+
+.richtext > a.toggle_views {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    color: antiquewhite;
+    cursor: pointer;
+}
+
+a.toggle_views.active{
+    color: orange;
+}
+.edit-tools-i img.material-icons {
+    width: 20px;
+    transition: all 2s linear;
+    margin:     10px 5px;
+    height: 20px;
+    float: left;
+}
+.edit-tools-h{
+  position: absolute;
+  left: 5px;
+}
+.edit-tools-i {
+    color: rgb(255, 255, 255);
+    height: auto;
+    width: 260px;
+    background-color: rgb(253, 253, 253);
+    position: absolute;
+    padding: 5px;
+    z-index: 9;
+    border-radius: 3px;
+    transition: 0.5s all;
+}
+.z-depth-2 > a:hover,
+#edit-tools-h > a:hover{
+
+}
+
+
+
+
+.tdropbtn {
+    background-color: #3498DB;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.tdropbtn:hover, .tdropbtn:focus {
+    background-color: #2980B9;
+}
+
+.tdropdown {
+    position: relative;
+    display: inline-block;
+    right: -22px;
+    top: -22px;
+}
+.edit-tools-i .collection .collection-item {
+    background-color: #fdfdfd;
+    line-height: 1.5rem;
+    padding: 10px 20px;
+    margin: 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+.edit-tools-i .linkurl-c {
+    width: 250px;
+}
+.tdropdown-content.createlinkurl {
+    left: 5px;
+    border-radius: 3px;
+    background-color:
+    #fdfdfd;
+}
+.tdropdown-content input {
+    width: 83%;
+    padding-left: 20px;
+}
+.tdropdown-content.createlinkurl input{
+  color: dimgrey;
+}
+.tdropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f2f2f2;
+    min-width: 130px;
+    max-height: 400px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    padding:0 3px;
+}
+
+.tdropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    color: black !important;
+}
+
+.tdropdown a:hover {background-color: #ddd;}
+
+.tshow {display: block;}
+
+#font-one{
+    font-family: 'Arial';
+}
+#font-two{
+    font-family: 'times new roman';
+}
+#font-three{
+    font-family: 'Georgia';
+}
+#font-four{
+    font-family: 'Impact';
+}
+#font-five{
+    font-family: 'Tahoma';
+}
+#font-six{
+    font-family: 'comic sans ms';
+}
+#heading-one{
+    font-size:2.6em;
+}
+#heading-two{
+    font-size:2.2em;
+}
+#heading-three{
+    font-size:2.0em;
+}
+#heading-four{
+    font-size:1.6em;
+}
+#heading-five{
+    font-size:1.2em;
+}
+#rchFontSize2{
+    min-width: 50px !important;
+}

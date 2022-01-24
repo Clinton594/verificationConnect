@@ -1,0 +1,703 @@
+/* CSS Document */
+.generic-slider{
+	position: relative;
+}
+.editors img.material-icons.tiny {
+    height: 20px;
+    float: left;
+    margin-top: 10px;
+}
+.generic-slider .addSlide {
+    cursor: pointer;
+    color: orange;
+    position: absolute;
+    top: -6px;
+    right: 3px;
+    z-index: 50;
+    background-color: white;
+    padding: 3px 7px;
+    border-radius: 7px;
+}
+.generic-slider .addSlide:hover, .generic-slider .slidEditors > i:hover, .editors > i:hover{
+	transition: 0.5s all;
+	color: antiquewhite;
+	font-size: large;
+}
+.generic-slider h5{
+	font-size: small;
+}
+.generic-slider .slidEditors {
+    position: absolute;
+    z-index: 50;
+    top: -4px;
+    left: -3px;
+    color: #ec9667;
+    background-color: white;
+    padding: 5px 13px;
+    border-radius: 3px;
+}
+.generic-slider .slidEditors > i{
+	margin-right: 3px;
+	cursor: pointer;
+		width: 13px;
+	height: 13px;
+	background-size: cover;
+}
+.generic-slider .slidEditors > i:hover{
+	width: 14px;
+	height: 14px;
+	transition: 0.3s all;
+
+}
+.modak {
+    font-family: 'Modak', cursive;
+    font-weight: 400;
+	text-shadow: 2px 2px 2px #000;
+}
+.generic-slider .slider_anchor {
+    border-radius: 4px;
+    text-transform: capitalize;
+    font-weight: bold;
+    box-shadow: none;
+    background-color: #21cefc;
+    color: #FFFFFF !important;
+}
+.generic-slider.animatable .slides li img{
+	animation: imageAnimation 50s linear infinite 0s;
+}
+.generic-slider.animatable .slides li:nth-child(1) > img{
+    animation-delay: 0s;
+}
+.generic-slider.animatable .slides li:nth-child(2) > img{
+    animation-delay: 6s;
+}
+.generic-slider.animatable .slides li:nth-child(3) > img{
+    animation-delay: 12s;
+}
+.generic-slider.animatable .slides li:nth-child(4) > img{
+    animation-delay: 18s;
+}
+.generic-slider.animatable .slides li:nth-child(5) > img{
+    animation-delay: 24s;
+}
+.generic-slider.animatable .slides li:nth-child(6) > img{
+    animation-delay: 30s;
+}
+.generic-slider.animatable .slides li:nth-child(7) > img{
+    animation-delay: 36s;
+}
+.generic-slider.animatable .slides li:nth-child(8) > img{
+    animation-delay: 42s;
+}
+.generic-slider.animatable .slides li:nth-child(9) > img{
+    animation-delay: 48s;
+}
+.generic-slider.animatable .slides li:nth-child(10) > img{
+    animation-delay: 54s;
+}
+
+@keyframes imageAnimation {
+    0% { opacity: 0; -webkit-animation-timing-function: ease-in; animation-timing-function: ease-in; }
+    10% { opacity: 1; -webkit-transform: scale(1.1) rotate(3deg); -webkit-animation-timing-function: ease-out; transform: scale(1.1) rotate(3deg); animation-timing-function: ease-out; }
+    20% { opacity: 1; -webkit-transform: scale(1.2) rotate(0deg); transform: scale(1.2) rotate(0deg); }
+    30% { opacity: 0.7; -webkit-transform: scale(1.1) rotate(-3deg); transform: scale(1.1) rotate(-3deg);}
+    60% { opacity: 0.4; -webkit-transform: scale(1.2) rotate(-5deg); transform: scale(1.4) rotate(-5deg);}
+    90% { opacity: 1; }
+}
+
+
+/*---------------------------------------------Card Images here-------------------------------------------------------------------*/
+.card_images {
+	width: 100%;
+	position: relative;
+	margin: auto;
+	box-sizing: border-box;
+	padding: 5px;
+	float: left;
+	margin-bottom: 20px;
+}
+
+.card_images .ch-item {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    cursor: default;
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+}
+.card_images .ch-item > img{
+	width: 100%
+}
+.card_images .ch-info {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	top: 0;
+	z-index: 5;
+	background-color: #928993b0;
+	-webkit-transition: all 0.4s ease-in-out;
+	-moz-transition: all 0.4s ease-in-out;
+	-o-transition: all 0.4s ease-in-out;
+	-ms-transition: all 0.4s ease-in-out;
+	transition: all 0.4s ease-in-out;
+	-webkit-transform: scale(0);
+	-moz-transform: scale(0);
+	-o-transform: scale(0);
+	-ms-transform: scale(0);
+	transform: scale(0);
+	-webkit-backface-visibility: hidden; /*for a smooth font */
+}
+
+.card_images .ch-info h3 {
+    color: #fff;
+    text-transform: uppercase;
+    position: relative;
+    letter-spacing: 2px;
+    font-size: 14px;
+    margin: 24px 0 10px;
+    font-family: 'Open Sans', Arial, sans-serif;
+    text-shadow: 0 0 1px #fff, 0 1px 2px rgba(0,0,0,0.3);
+    font-weight: bold;
+    text-align: center;
+	padding: 0 15px;
+	height: 15px;
+	overflow: hidden;
+}
+
+.card_images .ch-info p {
+    color: #fff;
+    font-style: italic;
+    margin: 0px 20px;
+    font-size: 12px;
+    border-top: 1px solid rgba(255,255,255,0.5);
+    text-align: center;
+    text-transform: capitalize;
+    float: left;
+    padding-top: 5px;
+		width: 110px;
+}
+
+.card_images .ch-info p .card_anchor {
+	display: block;
+	color: #fff;
+	color: rgba(255,255,255,0.7);
+	font-style: normal;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 9px;
+	letter-spacing: 1px;
+	padding-top: 4px;
+	font-family: 'Open Sans', Arial, sans-serif;
+	text-align: center;
+	float: left;
+	width: 100%;
+}
+
+.card_images .ch-info p .card_anchor:hover {
+	color: #fff222;
+	color: rgba(255,242,34, 0.8);
+}
+
+.card_images .btn.btn-save {
+    float: none;
+    margin: 0 calc(50% - 50px);
+        margin-top: 0px;
+    margin-top: 30px;
+}
+.card_images .li:hover > .ch-item{
+	transform: scale(0);
+}
+.card_images .li:hover {
+	box-shadow: inset 0 0 0 110px rgba(4, 39, 42, 0.4), inset 0 0 0 16px rgba(255,255,255,0.8), 0 1px 2px rgba(0,0,0,0.1);
+	transition: all 0.4s ease-in-out;
+}
+.card_images .li:hover .ch-info {
+	opacity: 1;
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	-o-transform: scale(1);
+	-ms-transform: scale(1);
+	transform: scale(1);
+}
+
+.card_images .ch-grid li {
+    margin: 1px 1px;
+    border: solid 1px #eeeded;
+    width: 150px;
+    float: left;
+    height: 150px;
+		overflow: hidden;
+		position: relative;
+}
+.items-container .card_images .ch-grid {
+    width: 304px;
+    height: auto;
+}
+.items-container.horizontal .card_images .ch-grid{width: unset}
+.card_images .ch-grid .photo_dialoag.show{
+	animation: 1s all;
+	height:100px;
+	visibility: visible;
+}
+.card_images .ch-grid .photo_dialoag img.small{
+	margin:30px 20px;
+}
+.editors img:hover, .card_editor img:hover,
+ .photo_dialoag img:hover, .addSlide img:hover,
+  .slidEditors img:hover, .add_specification img:hover{
+	animation: 0.5s all;
+	transform: rotate(5deg);
+}
+.card_images .ch-grid .photo_dialoag {
+		animation: 1s all;
+    position: absolute;
+		visibility: hidden;
+    left: 0px;
+    bottom: 0px;
+    height:0;
+    right: 0px;
+    /* background-color: white; */
+    z-index: 1;
+}
+
+.card_images .ch-grid {
+	list-style: none;
+	text-align: center;
+	position: relative;
+	box-sizing: border-box;
+	margin: 0 auto;
+}
+.card_images .ch-grid .card_desc {
+    max-height: 52px;
+    float: left;
+    overflow: hidden;
+    width: 100%;
+    margin-bottom: 5px;
+}
+.card_images .card_editor {
+    position: absolute;
+    bottom: 5px;
+    right: 12px;
+    background-color: #ccdbda66;
+    height: 18px;
+    width: 83%;
+    border-radius: 10px;
+}
+
+.card_images .card_editor img.tiny{
+	float: left;
+	color: antiquewhite;
+	cursor: pointer;
+	height: 15px;
+	margin-left: 30px;
+	margin-top: 2px;
+}
+.card_images .card_editor img.tiny:hover{
+	color: orange !important;
+	transition: 0.5s all;
+	cursor: pointer;
+}
+.ch-info{
+	cursor: pointer;
+}
+.card_images .card_editor i:first-child{margin-right: 25px;}
+
+#imageCard_preview {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #0000004d;
+	display: none;
+}
+
+#imageCard_preview.show{
+	z-index: 10000;
+	display: block;
+	position: fixed;
+	cursor: pointer;
+}
+
+#imageCard_preview > img {
+    margin: auto;
+    position: relative;
+    display: block;
+    top: 50px;
+	cursor: default;
+}
+
+/*------------------------------------------------------------------specifications------------------------*/
+.card_specifications {
+    float: left;
+    width: 100%;
+    padding: 20px 20px 0px 20px;
+    box-sizing: border-box;
+}
+
+.card_specifications .specification_head {
+    float: left;
+    width: 100%;
+    padding: 5px 15px;
+    color: #595e69;
+    font-size: 18px;
+    font-weight: bold;
+    /* background-color: white; */
+   /* box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);*/
+    border-top-right-radius: 30px;
+	line-height: 36px;
+	border-top-left-radius: 30px;
+	border: 1px solid #ddd;
+}
+
+.card_specifications .add_specification {
+    float: right;
+    width: 48px;
+    background-color: white;
+    padding: 2px 10px;
+    box-sizing: border-box;
+    margin-right: -7px;
+    font-size: 11px;
+    cursor: pointer;
+    color: #595e69;
+    border-top-right-radius: 22px;
+    height: 34px;
+    border: none !important;
+    margin-top: 2px;
+}
+
+.fullWidth{
+	width: 100% !important;
+    padding: 0;
+}
+.card_specifications .specification_head > span{
+	margin-left: 4px;
+}
+.card_specifications .collapsible-logo {
+    float: left;
+    width:  30px;
+    height:  30px;
+    margin-top: 5px;
+	overflow: hidden;
+    margin-right: 15px;
+    border-radius:   3px;
+    background-size: cover;
+	box-sizing:   border-box;
+	border: solid #9890a1 2px;
+    background-repeat:no-repeat;
+}
+
+.card_specifications .collapsible-logo > img{
+	float: left;
+	width: 100%;
+}
+.card_specifications .collapsible-header {
+	position: relative;
+	float: left;
+	width: 100%
+}
+.card_specifications .collapsible-body {
+    float: left;
+	width: 100%;
+	padding: 10px 50px;
+	position: relative;
+	background-color: #f6f4f2;
+	word-wrap: break-word;
+}
+.card_specifications .collapsible-body > div::before {
+    position: absolute;
+    content: ".";
+    left: 36px;
+    font-size: 30px;
+    color: brown;
+    line-height: 6px;
+    font-weight: bold;
+}
+.card_specifications .collapsible{
+	margin-top: 3px;
+	box-shadow: none;
+}
+.card_specifications .collapsible-header .editors {
+    position: absolute;
+    right: 5px;
+}
+
+.card_specifications .collapsible-header .editors > i{
+	font-size: 12px;
+	width: unset;
+}
+.card_specifications .collapsible > li, .card_specifications .collapsible {
+    float: left;
+    width: 100%;
+}
+.card_specifications .add_specification:hover {
+    border-top-right-radius: 15px;
+    transition: 0.9s all ease-in-out;
+    border: double orange;
+    color: orange;
+}
+
+
+/* -------------------------------------------------Object Widget---------------------------------- */
+.widget-container {
+	min-width: 350px;
+	width: 100%;
+	padding: 20px;
+	border-radius: 3px;
+	border: solid 1px
+	#d0d0d0;
+	position: relative;
+	float: left;
+	margin: 0 auto;
+	margin-bottom: 20px !important;
+}
+.widget-container .widget-head {
+    float: left;
+    width: 100%;
+}
+.widget-container .widget-reset {
+    text-align: center;
+    width: 100%;
+    cursor: pointer;
+}
+
+.widget-container .widget-body {
+    float: left;
+    width: 100%;
+    min-height: 300px;
+		border-top: solid 1px #cec6c6;
+		padding-top: 10px;
+}
+.widget-container .widget-body td{
+	padding: 0
+}
+.capitalize{text-transform: uppercase;}
+.widget-container .widget-footer button
+ {
+    text-align: center;
+    background-color: dimgray !important;
+		color:white;
+    font-size: 12px;
+    padding: 5px;
+    border-radius: 3px;
+    cursor: pointer;
+		border: none;
+		width: 100%;
+}
+.widget-container td input + small {
+    position: absolute;
+    background-color:  white;
+    padding: 5px 5px 5px 0;
+    font-weight: bold;
+    font-size: 20px;
+    right: 0;
+    padding-left: 0;
+    text-align: right;
+		cursor: pointer;
+}
+.widget-container td input + small:hover{
+    color: orangered;
+    transition: 0.5s all
+}
+
+/* --------------------------------------------------------CUSTOM MODAL FOR CAMERA */
+
+.modalc {
+  display: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  background-color: black;
+  padding: 0;
+  max-height: 70%;
+  width: 25%;
+  margin: 0 auto;
+  border-radius: 2px;
+  cursor: pointer;
+  will-change: top, opacity;
+
+}
+
+@media only screen and (max-width : 992px) {
+  .modalc {
+    width: 80%;
+  }
+}
+
+/* --------------------------------------------------------------------------------TRANSPORTATION DRAW SEATS */
+.seats-container {
+    min-height: 200px;
+    float: left;
+    width: 100%;
+}
+
+.draw-seats .car {
+    border: solid 1px #a7b2bb;
+    text-align: center;
+    padding: 100px 20px 20px;
+    border-radius: 35% 35% 10px 10px;
+}
+.seats-container .draw-seats .seat-number {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: #77737391;
+    text-align: center;
+    left: calc(50% - 20px);
+    font-weight: bold;
+    top: 20px;
+    padding-top: 5px;
+    border-radius: 50%;
+		color: white;
+}
+.seats-container .draw-seats {
+	position: relative;
+}
+.seats-container .draw-seats .seat {
+    border: solid 1px #94acd9;
+    font-size: 15px;
+    height: 50px;
+    width: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 50% 50% 10% 10%;
+    margin: 0 auto;
+    float: none;
+    text-align: center;
+    padding-top: 15px;
+		transition: 0.5s all;
+		background-image: url("../images/seat.png");
+		background-size: cover;
+		background-color: #9d9d8d;
+		color: white;
+}
+.seats-container .draw-seats .seat.available:hover {
+    background-color: #26df26;
+    border-radius: 50%;
+    color: #f0fff7;
+    border: none;
+}
+.seats-container .draw-seats .seat.booked{
+	background-color: red;
+	color: white;
+	border: none;
+}
+.seats-container .draw-seats .seat.selected{
+	background-color: green;
+	color: white;
+	border: none;
+}
+
+/* SLAVE MANAGER */
+.slave-container button.slave-button{
+	width: 86px !important;
+	float: right !important;
+	height: 38px !important;
+	margin-right: 5px;
+}
+
+
+/* ---------------------------------------------DYNAMIC LISTS MANAGER */
+.list-container .dynamic-lists-body {
+  border: solid 1px #cac2c2;
+  border-radius: 3px;
+  min-height: 100px;
+  width: 100%;
+	padding: 20px;
+	float: left;
+}
+.list-container button.submit {
+    margin-top: 15px;
+    height: 45px;
+}
+.list-container .dynamic-lists-list {
+    border-top: solid 1px #b2b2bd;
+    padding-top: 15px;
+}
+.list-container .dynamic-lists-item {
+	float: left;
+	padding: 5px 10px;
+	border: solid 1px #bdb4b4;
+	border-radius: 3px;
+	cursor: pointer;
+	margin: 3px;
+	background-color: gainsboro;
+	position: relative;
+}
+.list-container .dynamic-lists-item > label {
+    float: left;
+    margin: 4px 3px -1px;
+    line-height: 28px;
+    height: 27px;
+}
+.list-container .dynamic-lists-item > span {
+    float: left;
+    margin-right: 5px;
+    text-transform: uppercase;
+}
+.list-container .dynamic-lists-item .editors .material-icons.tiny{
+	margin-top: 5px;
+}
+/* -----------------------------------------------------------------------------------FORM BUILDER -------------------------------------------------- */
+.form-builder-container .builder-body {
+    width: 100%;
+    max-width: 800px;
+    padding: 0 20px;
+}
+.form-builder-container .card-action {
+	padding: 0 30px;
+}
+.form-builder-container .card-body {
+    padding: 20px;
+    border: solid 1px lightgray;
+    border-radius: 3px;
+		float: left;
+		width: 100%;
+}
+.form-builder-container ul.editors {
+    float: right;
+    width: 100%;
+		margin: 0;
+		display: flex;
+		align-items: baseline;
+		font-size: small;
+		font-family: sans-serif;
+		color: burlywood;
+}
+.form-builder-container ul.editors > li {
+    float: left;
+    margin-right: 10px;
+    flex: 1;
+}
+.form-builder-container .field-body, .form-builder-container .field-footer {
+    float: left;
+    width: 100%;
+}
+.bordered {
+    border: solid 1px lightgray;
+    border-radius: 4px;
+}
+.form-builder-container ul.options.checkbox > li{
+	list-style: square;
+}
+.form-builder-container ul.options.radio > li{
+	list-style: circle;
+}
+.form-builder-container ul.options.select > li{
+	list-style: lower-roman;
+}
+.form-builder-container ul.options > li{
+	width: 100%;
+	float: left;
+}
+.form-builder-container ul input.small-height {
+    height: 24px;
+    position: relative;
+    float: left;
+}

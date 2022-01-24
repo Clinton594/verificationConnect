@@ -1,0 +1,61 @@
+RewriteEngine On
+#RewriteCond %{HTTPS} off
+#turn on this line if on the web
+#RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]]
+
+RewriteCond %{REQUEST_URI} !\.(css|js|png|jpg|jpeg|mp4|eot|woff|woff2|ttf|svg)$
+RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteCond %{REQUEST_FILENAME} !-f
+#remove the dir below  if on the web
+
+#This Line routes all processing URLs
+RewriteRule ^process/list/?$ processors/process.php
+RewriteRule ^process/dropdown/?$ processors/process.php
+RewriteRule ^process/list/?$ processors/process.php
+RewriteRule ^process/login/?$ processors/process.php
+RewriteRule ^process/submit/?$ processors/process.php
+RewriteRule ^process/social/?$ processors/process.php
+RewriteRule ^process/emails/?$ processors/process.php
+RewriteRule ^process/update-cart/?$ processors/process.php
+RewriteRule ^process/delete-pin/?$ processors/process.php
+RewriteRule ^process/forgot-password/?$ processors/process.php
+RewriteRule ^process/reset-password/?$ processors/process.php
+RewriteRule ^process/delete/?$ processors/process.php
+RewriteRule ^process/startUp/?$ processors/process.php
+RewriteRule ^process/getParameters/?$ processors/process.php
+RewriteRule ^process/dialog/?$ processors/process.php
+RewriteRule ^process/upload/?$ processors/process.php
+RewriteRule ^process/files/?$ processors/process.php
+RewriteRule ^process/loadform/?$ processors/process.php
+RewriteRule ^process/void/?$ processors/process.php
+RewriteRule ^process/saveform/?$ processors/process.php
+RewriteRule ^process/transaction/?$ processors/process.php
+RewriteRule ^process/transportation/?$ processors/process.php
+RewriteRule ^process/payment/?$ processors/process.php
+RewriteRule ^process/download/?$ processors/process.php
+RewriteRule ^process/controllers/?$ processors/process.php
+RewriteRule ^process/custom/?$ processors/process.php
+RewriteRule ^process/report/?$ reports/run_report.php
+
+#This Line routes all views pages
+RewriteRule ^level-view/(.*)$ views/generic_level.php?pageType=$1
+RewriteRule ^result-view/(.*)$ views/generic_result.php?pageType=$1
+RewriteRule ^form-view/(.*)$ views/generic_parameter.php?pageType=$1
+RewriteRule ^content-view/(.*)$ views/generic_content.php?pageType=$1
+RewriteRule ^custom-view/(.*)$ backendProject/views/$1.php?pageType=$1
+RewriteRule ^transaction-view/(.*)$ views/generic_transaction.php?pageType=$1
+RewriteRule ^dashboard-view/(.*)$ views/generic_dashboard.php?pageType=$1
+RewriteRule ^details-view/(.*)$ views/generic_details.php?pageType=$1
+RewriteRule ^report/?$ reports/run_report.php
+RewriteRule ^profile/(.*)$ views/generic_profile.php?pageType=$1
+
+#Re-write all index urls
+RewriteRule ^home/?$ index.php
+RewriteRule ^index/?$ index.php
+RewriteRule ^login/?$ index.php
+RewriteRule ^logout/?$ index.php
+RewriteRule ^run-tables/?$ index.php
+RewriteRule ^reset/?$ index.php
+RewriteRule ^cron-job/?$ index.php
+RewriteRule ^/?$ index.php
+#Perfect HTACCESS file

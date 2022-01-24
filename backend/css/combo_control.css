@@ -1,0 +1,38 @@
+.combo-search,
+.combo-search.dropdown {
+    background-color: white;
+    position: absolute !important;
+    top: 74px;
+    display: none;
+    height: auto;
+    max-height: 200px;
+    padding: 10px 0px !important;
+    box-sizing: border-box;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 50;
+    border-radius: 2px;
+    border: 1px solid #ccc !important;
+    border-top: none !important;
+}
+
+.combo-search.dropdown a:hover {
+    transition: 0.4s all;
+    background-color: #1565c0;
+    color: white;
+}
+.combo-search a, .combo-search.dropdown a {
+    color: dimgray;
+    width: 100%;
+    float: left;
+    padding: 5px 10px;
+    font-family: Roboto,Helvetica;
+    font-size: 14px;
+    text-align: left;
+    border-bottom: solid 1px
+    aliceblue;
+}
+
+.combo-search.dropdown a:last-child{
+	border-bottom: none;
+}

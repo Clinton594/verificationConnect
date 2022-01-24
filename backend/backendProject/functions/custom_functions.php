@@ -9,3 +9,9 @@ function get_percent_of($percent, $amount)
 {
 	return ($amount * $percent) / 100;
 }
+
+function my_slug($post)
+{
+	$post->symbol = strToUrl($post->name);
+	return $post;
+}

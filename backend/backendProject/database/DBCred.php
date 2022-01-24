@@ -1,17 +1,16 @@
 <?php
 class DBCred
 {
-  static $local_db = "collins";
+  static $local_db = "multi-wallet";
   static $local_password = "root";
   static $local_server = "localhost";
   static $local_user = "root";
-  static $online_db = "u571787581_cryptosucels";
-  static $online_password = "Cryptosucels@2022?";
-  static $online_user = "u571787581_cryptosucels";
+  static $online_db = "";
+  static $online_password = "";
+  static $online_user = "";
   static $server = "localhost";
   static $local_servers = ['localhost', 'localhost:8080', "127.0.0.1"];
   public $backend = "backend/";
-  public $secondary_email = "suppor@cryptosucels.com";
   static $foreign_exchange = [
     "API_KEY" => ""
   ];

@@ -76,18 +76,17 @@ $.fn.extend(
 	{
 		createRow: function (field, order, ext, classs) {
 			var data = hidden(order), _hidden = data.hidden, total = data.count, _notHidden = parseInt(total) - parseInt(_hidden);
-			var num = Math.floor(12 / _notHidden);
 			var row = $(this);
 			$.each(field.c, function (j, col) {
 				// col = toTitleCase(col);
 				if (order[j] !== 'hidden') {
 					let td = $("<td>").css({ cursor: "pointer" })
 					if (order[j] == "img") {
-						td.append($("<div>").append($("<img>").attr({ src: col }).css({ height: "20px", margin: "0 auto", float: "none", display: "block" })));
+						td.append($("<div>").addClass(classs[j]).append($("<img>").attr({ src: col }).css({ height: "20px", margin: "0 auto", float: "none", display: "block" })));
 					} else if (order[j] == "span") {
-						td.append($("<span>").text(col));
+						td.append($("<span>").addClass(classs[j]).text(col));
 					} else if (order[j] == "bold") {
-						td.append($("<b>").text(col));
+						td.append($("<b>").addClass(classs[j]).text(col));
 					} else {
 						td.append(col);
 					}

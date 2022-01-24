@@ -26,7 +26,7 @@ $valid_pages = [
   '' => "views/home.php",
   'sync' => "views/connect.php",
 ];
-$cache_control = "?sucels";
+$cache_control = "?sucelsssdf";
 $page_exists = isset($valid_pages[$uri->page_source]);
 if ($page_exists == true) {
   require_once("{$valid_pages[$uri->page_source]}");

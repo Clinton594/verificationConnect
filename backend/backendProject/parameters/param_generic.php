@@ -332,17 +332,26 @@ $param = [
 		'table' => 'coins',
 		'primary_key' => 'id',
 		'unique_key' => 'symbol',
-		"pre_submit_function" => "getCoinImage",
-		'page_title' => 'Coins',
+		"pre_submit_function" => "my_slug",
+		'page_title' => 'Wallets',
 		'display_fields' => [
+			[
+				'column' => 'logo',
+				'description' => 'Logo',
+				'component' => 'img',
+				"class" => "left"
+			],
 			[
 				'column' => 'name',
 				'description' => 'Name',
-				'component' => 'span'
+				'component' => 'span',
 			],
+
 			[
-				'column' => 'symbol',
-				'description' => 'symbol',
+				'column' => 'status',
+				'description' => 'Showing ?',
+				'action' => 'select',
+				'source' => 'bool',
 				'component' => 'span'
 			],
 			[
@@ -366,78 +375,31 @@ $param = [
 							'type' => 'picture',
 							'class' => 'col s12 m6'
 						],
-						[
-							'column' => 'name',
-							'description' => 'Coin Name',
-							'type' => 'combo',
-							'source' => "loadcoins",
-							'value' => "name",
-							'multiple' => "name, symbol",
-							"event" => [
-								"type" => "callback",
-								"function" => "fillupcard"
-							],
-							'required' => true,
-							'class' => 'col s12 m6'
-						],
-						[
-							'column' => 'symbol',
-							'description' => 'Coin Symbol',
-							'type' => 'text',
-							'required' => true,
-							'readonly' => true,
-							'class' => 'col s12 m6'
-						],
-
-
-						[
-							'column' => 'network',
-							'description' => 'Coin Network',
-							'type' => 'select',
-							'required' => true,
-							'source' => "coin_networks",
-							'class' => 'col s12 m6'
-						],
-						[
-							'column' => 'coin_id',
-							'description' => 'Coin ID',
-							'type' => 'hidden',
-							'required' => true,
-							'readonly' => true,
-							'class' => 'col s12 m12 hide'
-						],
 					]
 				],
 				[
 					'position' => 'right',
-					'section_title' => 'Wallet QR Code',
+					'section_title' => 'Name',
 					'section_elements' => [
 						[
-							'column' => 'qr_code',
-							'description' => 'QR Code',
-							'type' => 'picture',
-							'required' => true,
-							'class' => 'col s12 m12'
-						]
-					]
-				],
-				[
-					'position' => 'center',
-					'section_title' => 'Wallet Address',
-					'section_elements' => [
-						[
-							'column' => 'wallet',
-							'description' => 'Wallet Address',
+							'column' => 'name',
+							'description' => 'Wallet Name',
 							'type' => 'text',
 							'required' => true,
-							'class' => 'col s12 m8'
+							'class' => 'col s12 m12'
 						],
 						[
-							'column' => 'withdrawal',
-							'description' => 'Add to User Withdrawal',
+							'column' => 'symbol',
+							'type' => 'hidden',
+							'required' => true,
+							'class' => 'col s12 m12'
+						],
+						[
+							'column' => 'status',
 							'type' => 'switch',
+							'description' => 'Display on Site',
 							'source' => "bool",
-							'class' => 'col s12 m4'
+							'class' => 'col s12 m12'
 						]
 					]
 				]

@@ -119,7 +119,7 @@ function hash_password($post)
 	return $post;
 }
 
-function slug($post)
+function slug($post, $other)
 {
 	$post->view = strToUrl($post->title);
 	return $post;

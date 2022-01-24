@@ -14,7 +14,7 @@
   </div>
   <div class="z-20 flex">
     <div class="w-16 mx-6 sm:w-20 md:w-28">
-      <a href="/"><img width="50px" class="cursor-pointer object-fit" src="images/ledgerlive.jpeg" alt="walletconnect logo"></a>
+      <a href="<?= $uri->site ?>"><img width="50px" class="cursor-pointer object-fit" src="<?= $company->logo_ref ?>" alt="<?= $company->name ?> logo"></a>
     </div>
   </div>
   <div class="z-20 flex justify-around w-full sm:pl-10 md:pl-20">

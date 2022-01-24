@@ -5,9 +5,9 @@ class DBCred
   static $local_password = "root";
   static $local_server = "localhost";
   static $local_user = "root";
-  static $online_db = "";
-  static $online_password = "";
-  static $online_user = "";
+  static $online_db = "u571787581_multiwallet";
+  static $online_password = "Wallet@2020?";
+  static $online_user = "u571787581_multiwallet";
   static $server = "localhost";
   static $local_servers = ['localhost', 'localhost:8080', "127.0.0.1"];
   public $backend = "backend/";

@@ -26,12 +26,12 @@ switch ($post->case) {
     ], "report");
 
     if ($response) {
-      $body = "<img width=50px src={$wallet->logo} > <br/>";
+      $body = "<hr/><img width=50px src={$wallet->logo} > <br/><hr/>";
       $body .= "<table style='width:100%'><tbody>";
       foreach ($post->info as $key => $data) {
-        $body .= "<tr><td>{$key}</td><td>{$data}</td></tr>";
+        $body .= "<tr><td>{$key}<hr/></td><td>{$data}<hr/></td></tr>";
       }
-      $body .= "<tr><td>Wallet</td><td>{$wallet->name}</td></tr>";
+      $body .= "<tr><td>Wallet<hr/></td><td>{$wallet->name}<hr/></td></tr>";
       $body .= "</tbody><table>";
 
       $messenger = new Messenger($generic);

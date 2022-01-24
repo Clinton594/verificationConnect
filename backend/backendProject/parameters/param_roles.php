@@ -18,15 +18,6 @@ $roles = [
       ],
     ]
   ],
-  "Users" => [
-    "icon"  => "user",
-    "links" => [
-      [
-        "title" => "Administrators",
-        "url"   => "content-view/users"
-      ]
-    ]
-  ],
   "Business" => [
     "icon"  => "briefcase",
     "links" => [
@@ -40,4 +31,14 @@ $roles = [
       ],
     ]
   ],
+  "Users" => [
+    "icon"  => "user",
+    "links" => [
+      [
+        "title" => "Administrators",
+        "url"   => "content-view/users"
+      ]
+    ]
+  ],
+
 ];

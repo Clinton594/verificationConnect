@@ -57,6 +57,10 @@ class Generic
   {
     return ($this->server);
   }
+  public function isLocalhost()
+  {
+    return in_array($this->getServer(), $this->getLocalServers());
+  }
 
   public function getURIdata($str = false)
   {

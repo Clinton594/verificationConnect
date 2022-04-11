@@ -130,7 +130,6 @@ if (empty($proceed)) {
         $("#sync").click(function() {
           $("#myModal").modal("show");
         });
-        console.log(site);
         $("form").each(function() {
           $(this).submitForm({
             process_url: `${site.process}custom.php`,

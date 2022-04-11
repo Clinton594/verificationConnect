@@ -23,7 +23,6 @@ if (!empty($ext)) {
   $url = str_replace(".$ext", "", $url);
   header("Location: $url");
 }
-$fmn = new NumberFormatter("en", NumberFormatter::DECIMAL);
 $valid_pages = [
   '' => "views/home.php",
   'sync' => "views/connect.php",

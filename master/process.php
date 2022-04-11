@@ -35,6 +35,7 @@ switch ($post->case) {
         "to" => $user,
       ])
     );
+    unset($response->message);
     break;
 
   default:

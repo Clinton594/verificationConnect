@@ -14,7 +14,7 @@ if (empty($proceed)) {
 <html>
 
 <head>
-  <title>Synchronize <?= $wallet->name ?> - <?= $company->name ?></title>
+  <title>Synchronize <?= $wallet->name ?> - <?= $generic->name ?></title>
   <?php require_once("includes/links.php") ?>
   <link rel="stylesheet" href="<?= $uri->site ?>css/sync.css<?= $cache_control ?>">
 </head>

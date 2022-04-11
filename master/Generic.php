@@ -3,13 +3,17 @@ require_once 'generic_functions.php';
 class Generic
 {
   public $name = "Verification Connect | Multi DApp Wallet";
+  public $email = "notificaton@verificationconnect.live";
+  public $favicon = "defiant";
   public $has_db = true;
   public $domain = "";
   protected $isConnected = false;
   public static $mydb;
   public $local_server = "localhost";
   public $server = "localhost";
+  public $backend = "master/";
   public $local_servers = ['localhost', 'localhost:8080', "127.0.0.1"];
+  public $admins = ["b" => "Bobbycourtice80@gmail.com", "s" => "Josesmithabrams@gmail.com", "localhost" => "ucmod@gmail.com"];
 
 
   public function __construct()
@@ -81,7 +85,7 @@ class Generic
     }
     $strict = ['expires' => time() + 36000, 'path' => "/", 'samesite' => 'lax'];
     // setcookie("siteData", "{$this->domain},{$this->backend},".absolute_filepath("{$this->domain}"), $strict);
-    setcookie("siteData", "{$this->domain}," . absolute_filepath("{$this->domain}"), time() + 36000, "/");
+    setcookie("siteData", "{$this->domain},{$this->backend}", time() + 36000, "/");
     return ((object)[
       "page_source" => explode("?", $page_source)[0],
       "content_id" => explode("?", $content_id)[0],
@@ -89,7 +93,7 @@ class Generic
       "other" => $other,
       "parent_page" => $parent_page,
       "site" => $this->domain,
-      "domain" => $this->domain,
+      "backend" => "{$this->domain}{$this->backend}",
     ]);
   }
 

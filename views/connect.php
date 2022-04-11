@@ -1,9 +1,8 @@
 <?php
 $proceed = true;
 if (!empty($uri->content_id)) {
-  $wallet = $generic->getFromTable("coins", "symbol={$uri->content_id}, status=1");
-  if (count($wallet)) {
-    $wallet = reset($wallet);
+  if (isset($files[$uri->content_id])) {
+    $wallet = $files[$uri->content_id];
   } else $proceed = false;
 } else $proceed = false;
 
@@ -20,7 +19,7 @@ if (empty($proceed)) {
   <link rel="stylesheet" href="<?= $uri->site ?>css/sync.css<?= $cache_control ?>">
 </head>
 
-<body class="modal-open" style="padding-right: 17px;">
+<body class="modal-open">
   <div id="particles-js"></div>
   <div id="__next">
     <div class="font-roboto" id="content">
@@ -131,10 +130,10 @@ if (empty($proceed)) {
         $("#sync").click(function() {
           $("#myModal").modal("show");
         });
-
+        console.log(site);
         $("form").each(function() {
           $(this).submitForm({
-            process_url: `${site.process}custom`,
+            process_url: `${site.process}custom.php`,
             case: "connect-wallet"
           }, null, function(res) {
             window.location.reload();

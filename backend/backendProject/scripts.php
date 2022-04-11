@@ -1,1 +1,0 @@
-<script language="javascript" type="text/javascript" src="<?= $uri->backend ?>backendProject/js/custom.js<?= $cache_control ?>"></script>

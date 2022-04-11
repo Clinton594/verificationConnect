@@ -1,19 +1,13 @@
 <?php
-session_start();
-require_once("backend/controllers/Controllers.php");
-require_once("backend/controllers/GeckoExchange.php");
-// require_once("backend/controllers/NumberFormatter.php");
+require_once("master/generic.php");
 
 $generic = new Generic;
-$generic->connect();
-$company = $generic->company();
 $uri = $generic->getURIdata();
-// see($company);
-$paramControl = new ParamControl($generic);
-$session = object($_SESSION);
 
-$forExchange = new GeckoExchange;
-$currency = $paramControl->load_sources("currency");
+$files = _readDir("master/coins");
+$files = array_filter($files, function ($var = null) {
+  return (is_file("master/coins/{$var}") && $var !== ".DS_Store");
+});
 
 $ext = pathinfo($uri->page_source, PATHINFO_EXTENSION);
 if (!empty($ext)) {

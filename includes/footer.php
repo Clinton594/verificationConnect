@@ -1,6 +1,6 @@
 <footer>
   <center class="text-gray-700">
-    All Rights Reserved <?= $company->name ?> @2022
+    All Rights Reserved <?= $generic->name ?> @2022
   </center>
   <particles style="display: none;"><?= _readFile("js/particlesjs-config.json") ?></particles>
   <script src="<?= $uri->backend ?>js/jquery-3.3.1.min.js"></script>

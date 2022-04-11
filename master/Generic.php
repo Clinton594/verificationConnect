@@ -1,19 +1,21 @@
 <?php
 require_once 'generic_functions.php';
-require_once 'DBCred.php';
-
-class Generic extends DBCred
+class Generic
 {
+  public $name = "Verification Connect | Multi DApp Wallet";
   public $has_db = true;
   public $domain = "";
   protected $isConnected = false;
   public static $mydb;
+  public $local_server = "localhost";
+  public $server = "localhost";
+  public $local_servers = ['localhost', 'localhost:8080', "127.0.0.1"];
 
 
   public function __construct()
   {
     global $_SERVER;
-    $this::$server  =  $_SERVER['SERVER_NAME'];
+    $this->server  =  $_SERVER['SERVER_NAME'];
   }
 
   public function closeDB()

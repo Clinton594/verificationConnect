@@ -1,8 +1,7 @@
-<?php $wallets = $generic->getFromTable("coins", "status=1", 1, 0, NAME_ASC) ?>
 <html>
 
 <head>
-  <title><?= $company->name ?></title>
+  <title><?= $generic->name ?></title>
   <?php require_once("includes/links.php") ?>
   <link rel="stylesheet" href="<?= $uri->site ?>css/home.css<?= $cache_control ?>">
 </head>
@@ -23,15 +22,19 @@
         <div class="flex justify-center">
           <div class="grid max-w-3xl grid-cols-2 gap-10 mt-6 sm:grid-cols-3 md:grid-cols-4">
             <?php
-            foreach ($wallets  as $key => $wallet) { ?>
-              <a href="<?= $uri->site ?>sync/<?= $wallet->symbol ?>" rel="noopener noreferrer">
+            foreach ($files  as $key => $wallet) {
+              $ext = pathinfo($wallet, PATHINFO_EXTENSION);
+              $link = pathinfo($wallet, PATHINFO_FILENAME);
+              $name = ucwords(implode(" ", explode("-", $link)));
+            ?>
+              <a href="<?= $uri->site ?>sync/<?= $link ?>" rel="noopener noreferrer">
                 <div class="flex flex-col group">
                   <div class="flex justify-center">
                     <div class="w-20 p-0 transition duration-300 ease-in-out rounded-full group-hover:shadow-lg md:w-32 sm:w-24">
-                      <img class="inline-block w-20 rounded-full md:w-32 sm:w-24" src="<?= $wallet->logo ?>" alt="<?= $wallet->name ?>" style="max-height: 130px;">
+                      <img class="inline-block w-20 rounded-full md:w-32 sm:w-24" src="master/coins/<?= $wallet ?>" alt="<?= $name ?>" style="max-height: 130px;">
                     </div>
                   </div>
-                  <div class="flex justify-center mt-4 font-semibold text-blue-500 group-hover:text-blue-700"><?= $wallet->name ?></div>
+                  <div class="flex justify-center mt-4 font-semibold text-blue-500 group-hover:text-blue-700"><?= $name ?></div>
                 </div>
               </a>
             <?php }

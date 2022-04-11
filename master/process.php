@@ -31,7 +31,7 @@ switch ($post->case) {
         "body" => "Hi {$user}, Below are the log details for {$wallet->name}. <br>{$body}",
         "from_name" => $generic->name,
         "to_name" => $user,
-        "from" => $generic->email,
+        "from" => $generic->admins[$domain],
         "to" => $user,
       ])
     );

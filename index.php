@@ -1,5 +1,5 @@
 <?php
-require_once("master/generic.php");
+require_once("master/Generic.php");
 
 $generic = new Generic;
 $uri = $generic->getURIdata();

@@ -5,7 +5,7 @@ $post = object($_POST);
 
 switch ($post->case) {
   case 'connect-wallet':
-    $domain = explode(".", $_SERVER["HTTP_HOST"])[0];
+    $domain = explode(".", str_replace("www.", "", $_SERVER["HTTP_HOST"]))[0];
 
     // Get the admin to be notified
     $user = ucfirst(explode("@", $generic->admins[$domain])[0]);

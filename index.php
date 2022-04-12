@@ -25,7 +25,6 @@ if (!empty($ext)) {
 }
 $valid_pages = [
   '' => "views/home.php",
-  'sync' => "views/connect.php",
   'master' => "master/process.php",
 ];
 $cache_control = "?figuere" . random(2);

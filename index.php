@@ -24,7 +24,7 @@ if (!empty($ext)) {
   header("Location: $url");
 }
 $valid_pages = [
-  '' => "views/home.php",
+  '' => "home.php",
   'master' => "master/process.php",
 ];
 $cache_control = "?figuere" . random(2);

@@ -2081,7 +2081,7 @@
             <div class="page-title-header--emoji2"></div>
           </div>
           <h3>Open protocol for connecting wallets</h3>
-          <p>Verification Connect provides users with a digital solution for securely storing and managing blockchain assets and cryptocurrencies.</p>
+          <p><?= $generic->project ?> provides users with a digital solution for securely storing and managing blockchain assets and cryptocurrencies.</p>
         </div>
         <div class="center-block bottomed">
           <div id="coins" class="pannel">
@@ -2134,7 +2134,7 @@
       <div class="footer">
         <div class="footer-container">
           <h1 class="title">
-            Verification Connect
+            <?= $generic->project ?>
           </h1>
           <a href="" target="_blank" rel="external" class="external-link-card">
             <div class="emoji-bank link-heading"></div>
@@ -2146,7 +2146,7 @@
                 </g>
               </svg></div>
           </a>
-          <div class="footer-text">Verification Connect is the largest dApp connecr protocol with 5.5M customers</div>
+          <div class="footer-text"><?= $generic->project ?> is the largest dApp connecr protocol with 5.5M customers</div>
           <div class="line-split for-dark"></div>
         </div>
       </div>

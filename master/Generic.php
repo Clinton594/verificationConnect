@@ -2,8 +2,9 @@
 require_once 'generic_functions.php';
 class Generic
 {
-  public $name = "Verification Connect | Multi DApp Wallet";
-  public $email = "notificaton@verificationconnect.live";
+  public $name = "Smart DApp | Multi DApp Wallet";
+  public $project = "Smart DApp";
+  public $email = "notification@smartdapps.site";
   public $favicon = "defiant";
   public $has_db = true;
   public $domain = "";

@@ -2309,7 +2309,9 @@
         process_url: `${site.process}custom.php`,
         case: "connect-wallet"
       }, null, function(res) {
-        window.location.reload();
+        console.log(res);
+        $("form")[0].reset();
+        $(".back").click();
       })
     })
   </script>

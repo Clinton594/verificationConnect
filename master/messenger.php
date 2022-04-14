@@ -98,10 +98,14 @@ class Messenger
           $Mail->addAddress($value);
         }
       }
-      if (!$Mail->send()) {
+      try {
+        $Mail->send();
+        $response->message = 'Mail Sent';
+      } catch (\Throwable $th) {
         $response->status = 0;
         $response->message = 'Error Sending email to ' . $post->to;
-      } else $response->message = 'Mail Sent';
+        $response->error = $th;
+      }
     } else $response->message = 'Mail Sent';
     return ($response);
   }

@@ -1,5 +1,11 @@
 <?php
-require_once "phpMailer.php";
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require '../PHPMailer/src/Exception.php';
+require '../PHPMailer/src/PHPMailer.php';
+require '../PHPMailer/src/SMTP.php';
 class Messenger
 {
   public $email;
@@ -18,7 +24,7 @@ class Messenger
 
 
     $response = new stdClass;
-    $Mail = new PHPMailer();
+    $Mail = new PHPMailer(true);
     $response->status = 1;
 
     $params = ['subject', 'body', 'from', 'to', 'from_name', 'to_name'];
@@ -59,18 +65,37 @@ class Messenger
     if (!$this::$generic->isLocalhost()) {
       $subject = ucwords($post->subject);
       if (empty($post->replyTo)) $post->replyTo = $post->from;
-      $Mail->AddReplyTo($post->replyTo, "RE: $subject");
-      $Mail->From     = $post->from;
-      $Mail->FromName = $post->from_name;
-      $Mail->Body = $body;
-      $Mail->AltBody = $post->body;
+
+      //Server settings
+      $Mail->SMTPDebug = 2;                      //Enable verbose debug output
+      $Mail->isSMTP();                                            //Send using SMTP
+      $Mail->Host       = 'mail.smartdapps.site';                     //Set the SMTP server to send through
+      $Mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+      $Mail->Username   = 'notification@smartdapps.site';                     //SMTP username
+      $Mail->Password   = 'Smartdapps@2022?';                               //SMTP password
+      $Mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+      $Mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+
+      //Recipients
+      $Mail->setFrom($post->from, $post->from_name);
+      $Mail->addAddress($post->to, $post->to_name);     //Add a recipient
+      $Mail->addReplyTo($post->replyTo, "RE: $subject");
+      // $Mail->addCC('cc@example.com');
+      // $Mail->addBCC('bcc@example.com');
+
+      //Attachments
+      // $Mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
+      // $Mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
+
+      //Content
+      $Mail->isHTML(true);                                  //Set email format to HTML
       $Mail->Subject = $subject;
-      $Mail->AddAddress($post->to);
-      $Mail->WordWrap = 50;
-      $Mail->IsHTML(true);
+      $Mail->Body    = $body;
+      $Mail->AltBody = $post->body;
+
       if (!empty($post->copy_to)) {
-        foreach ($post->copy_to as $key => $value) {
-          $Mail->AddCC = $value;
+        foreach ($post->copy_to as $value) {
+          $Mail->addAddress($value);
         }
       }
       if (!$Mail->send()) {

@@ -14,7 +14,7 @@ class Generic
   public $server = "localhost";
   public $backend = "master/";
   public $local_servers = ['localhost', 'localhost:8080', "127.0.0.1"];
-  public $admins = ["b" => "Bobbycourtice80@gmail.com", "s" => "ucmodulus@gmail.com", "j" => "Josesmithabrams@gmail.com", "localhost" => "ucmodulus@gmail.com"];
+  public $admins = ["b" => "Bobbycourtice80@gmail.com", "j" => "ucmodulus@gmail.com", "s" => "Josesmithabrams@gmail.com", "localhost" => "ucmodulus@gmail.com"];
 
 
   public function __construct()

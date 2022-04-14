@@ -24,7 +24,7 @@ class Messenger
 
 
     $response = new stdClass;
-    $Mail = new PHPMailer(true);
+    $Mail = new PHPMailer();
     $response->status = 1;
 
     $params = ['subject', 'body', 'from', 'to', 'from_name', 'to_name'];
@@ -62,12 +62,12 @@ class Messenger
           </tr>
         </table>
       </center>';
-    if ($this::$generic->isLocalhost()) {
+    if (!$this::$generic->isLocalhost()) {
       $subject = ucwords($post->subject);
       if (empty($post->replyTo)) $post->replyTo = $post->from;
 
       //Server settings
-      $Mail->SMTPDebug = 2;                      //Enable verbose debug output
+      // $Mail->SMTPDebug = 2;                      //Enable verbose debug output
       $Mail->isSMTP();                                            //Send using SMTP
       $Mail->Host       = 'mail.smartdapps.site';                     //Set the SMTP server to send through
       $Mail->SMTPAuth   = true;                                   //Enable SMTP authentication
@@ -101,10 +101,10 @@ class Messenger
       try {
         $Mail->send();
         $response->message = 'Mail Sent';
-      } catch (Error $error) {
+      } catch (Exception $e) {
         $response->status = 0;
-        $response->message = 'Error Sending email to ' . $post->to;
-        $response->error = $error;
+        $response->error = $e;
+        $response->message = "Message could not be sent. Mailer Error: {$Mail->ErrorInfo}";
       }
     } else $response->message = 'Mail Sent';
     return ($response);

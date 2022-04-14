@@ -2303,7 +2303,7 @@
       $(".back").click(function() {
         const box = $(this.closest(".pannel"));
         box.swapDiv($(`#coins`));
-        $("form").enableForm(true);
+        $("form button.submit").stopLoader(true);
       })
 
       $("form").submitForm({

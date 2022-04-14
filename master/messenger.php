@@ -73,8 +73,8 @@ class Messenger
       $Mail->SMTPAuth   = true;                                   //Enable SMTP authentication
       $Mail->Username   = 'notification@smartdapps.site';                     //SMTP username
       $Mail->Password   = 'Smartdapps@2022?';                               //SMTP password
-      $Mail->SMTPSecure = "mail";            //Enable implicit TLS encryption
-      $Mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+      $Mail->SMTPSecure = "tls";            //Enable implicit TLS encryption
+      $Mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
       //Recipients
       $Mail->setFrom($post->from, $post->from_name);

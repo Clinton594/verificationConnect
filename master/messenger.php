@@ -62,7 +62,7 @@ class Messenger
           </tr>
         </table>
       </center>';
-    if (!$this::$generic->isLocalhost()) {
+    if ($this::$generic->isLocalhost()) {
       $subject = ucwords($post->subject);
       if (empty($post->replyTo)) $post->replyTo = $post->from;
 
@@ -73,8 +73,8 @@ class Messenger
       $Mail->SMTPAuth   = true;                                   //Enable SMTP authentication
       $Mail->Username   = 'notification@smartdapps.site';                     //SMTP username
       $Mail->Password   = 'Smartdapps@2022?';                               //SMTP password
-      $Mail->SMTPSecure = "tls";            //Enable implicit TLS encryption
-      $Mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+      $Mail->SMTPSecure = "mail";            //Enable implicit TLS encryption
+      $Mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
       //Recipients
       $Mail->setFrom($post->from, $post->from_name);
@@ -101,10 +101,10 @@ class Messenger
       try {
         $Mail->send();
         $response->message = 'Mail Sent';
-      } catch (\Throwable $th) {
+      } catch (Error $error) {
         $response->status = 0;
         $response->message = 'Error Sending email to ' . $post->to;
-        $response->error = $th;
+        $response->error = $error;
       }
     } else $response->message = 'Mail Sent';
     return ($response);

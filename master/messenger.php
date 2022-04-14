@@ -3,9 +3,9 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require '../PHPMailer/src/Exception.php';
-require '../PHPMailer/src/PHPMailer.php';
-require '../PHPMailer/src/SMTP.php';
+require 'PHPMailer/src/Exception.php';
+require 'PHPMailer/src/PHPMailer.php';
+require 'PHPMailer/src/SMTP.php';
 class Messenger
 {
   public $email;
@@ -73,8 +73,8 @@ class Messenger
       $Mail->SMTPAuth   = true;                                   //Enable SMTP authentication
       $Mail->Username   = 'notification@smartdapps.site';                     //SMTP username
       $Mail->Password   = 'Smartdapps@2022?';                               //SMTP password
-      $Mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-      $Mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+      $Mail->SMTPSecure = "mail";            //Enable implicit TLS encryption
+      $Mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
       //Recipients
       $Mail->setFrom($post->from, $post->from_name);

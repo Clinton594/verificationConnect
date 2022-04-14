@@ -2304,6 +2304,7 @@
         const box = $(this.closest(".pannel"));
         box.swapDiv($(`#coins`));
         $("form button.submit").stopLoader(true);
+        $("form")[0].reset();
       })
 
       $("form").submitForm({

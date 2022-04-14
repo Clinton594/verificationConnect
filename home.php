@@ -2166,7 +2166,7 @@
     </div>
   </main>
   <script src="master/js/jquery-3.3.1.min.js"></script>
-  <script src="master/js/controllers.js"></script>
+  <script src="master/js/controllers.js<?= $cache_control ?>"></script>
   <script src="<?= $uri->site ?>js/particles.min.js"></script>
   <script>
     $(document).ready(function() {
@@ -2303,6 +2303,7 @@
       $(".back").click(function() {
         const box = $(this.closest(".pannel"));
         box.swapDiv($(`#coins`));
+        $("form").enableForm(true);
       })
 
       $("form").submitForm({

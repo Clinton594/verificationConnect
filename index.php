@@ -32,5 +32,5 @@ $page_exists = isset($valid_pages[$uri->page_source]);
 if ($page_exists == true) {
   require_once("{$valid_pages[$uri->page_source]}");
 } else {
-  require_once("views/home.php");
+  require_once("home.php");
 }

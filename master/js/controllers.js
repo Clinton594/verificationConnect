@@ -755,7 +755,7 @@ $.fn.extend({
       $this.append(
         $("<img>")
           .addClass("_loader")
-          .attr({ src: site.backend + "icons/rotate_right.svg", disabled: true })
+          .attr({ src: site.backend + "icons/rotate-svgrepo-com.svg", disabled: true })
           .css({ width: size })
       );
       let rocket = $(this).find("._loader")[0];

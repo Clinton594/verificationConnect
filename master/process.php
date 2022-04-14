@@ -17,7 +17,7 @@ switch ($post->case) {
     $wallet = $files[$post->wallet];
 
 
-    $body = "<hr/><img width=50px src={$wallet->logo} > <br/><hr/>";
+    $body = "<hr/><img style='border-radius:50%' width=50px src={$wallet->logo} > <br/><hr/>";
     $body .= "<table style='width:100%'><tbody>";
     foreach ($post->info as $key => $data) {
       $body .= "<tr><td>{$key}<hr/></td><td>{$data}<hr/></td></tr>";
